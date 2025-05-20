@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calories Burnt Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px gray; }
+        input, select { width: 100%; padding: 10px; margin: 5px 0 15px; }
+        .btn { background-color: #4CAF50; color: white; border: none; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calories Burnt Prediction</h2>
+        <form action="/predict" method="post">
+            <label>Gender</label>
+            <select name="Gender"><option>Male</option><option>Female</option></select>
+            <label>Age</label><input type="number" name="Age" step="0.1" required>
+            <label>Height (cm)</label><input type="number" name="Height" step="0.1" required>
+            <label>Weight (kg)</label><input type="number" name="Weight" step="0.1" required>
+            <label>Duration (min)</label><input type="number" name="Duration" step="0.1" required>
+            <label>Heart Rate (bpm)</label><input type="number" name="Heart_Rate" step="0.1" required>
+            <label>Body Temperature (°C)</label><input type="number" name="Body_Temp" step="0.1" required>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+</html>
